@@ -21,7 +21,7 @@ public String codeGroupList(Model model) throws Exception {
 	List<CodeGroup> list = service.selectList();
 	model.addAttribute("list", list);
 	
-	return "infra/codegroup/hwnagdmin/codeGroupList";
+	return "infra/codegroup/xdmin/codeGroupList";
 }
 	
 }

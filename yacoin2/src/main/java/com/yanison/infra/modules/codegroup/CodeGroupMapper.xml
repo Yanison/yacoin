@@ -3,16 +3,15 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
+
+
 
 <mapper namespace="com.yanison.infra.modules.codegroup.CodeGroupMapper">
-									<!-- // 맵퍼 경로를 프로젝트에 맞게 설정해주면 됨 -->
+									
     <resultMap id="resultMapObj" type="com.yanison.infra.modules.codegroup.CodeGroup"></resultMap>
-																<!-- //데이터 객체의 경로를 프로젝트에 맞게 설정해주면 됨 -->
+																		
 	<select id="selectList" resultMap="resultMapObj">
-		SELECT * FROM MEMBER
+		SELECT a.* FROM member a WHERE 1=1
 	</select>
 
-</mapper>	
-
-<!-- com.yanison.infra.modules.codegroup.CodeGroupMapper -->
+</mapper>

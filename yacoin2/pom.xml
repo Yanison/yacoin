@@ -119,7 +119,7 @@
 		</dependency>
 		
 		
-		<!-- mybatis s 2022.02.13 -->
+				<!-- mybatis s 2022.02.13 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
@@ -155,6 +155,8 @@
 		</dependency>
 		<!-- @Resource in DAO: multi db connection : e 2022.02.13 -->
 		
+
+ 
 		<!-- mysql s 2022.02.25 -->
 		<dependency>
 			<groupId>mysql</groupId>
