@@ -1,25 +1,34 @@
-$(document).ready(function(){
-	$('#root_home').on('click',function(){
-		location.href="./root_main"
-	});
-	
-	
-	$('.codemeue1').click(function(){
-		$('.toggle1').show();
-		$('.toggle2').hide();
-		$('.toggle3').hide();
+$(document).ready(function(){	
+	$('#empTable').click(function(){
+		
+		$('.empTable').show();
+		$('.isTable').hide();
+		$('.codeManage').hide();
+		$('.memberInfo').hide();
 	})
 	
-	$('.codemeue2').click(function(){
-		$('.toggle1').hide();
-		$('.toggle2').show();
-		$('.toggle3').hide();
+	$('#nvai-code-Table').click(function(){
+		
+		$('.empTable').hide();
+		$('.isTable').show();
+		$('.codeManage').hide();
+		$('.memberInfo').hide();
 	})
 	
-	$('.codemeue3').click(function(){
-		$('.toggle1').hide();
-		$('.toggle2').hide();
-		$('.toggle3').show();
+	$('#nvai-code-codemanage').click(function(){
+		console.log('codemanage');
+		$('.empTable').hide();
+		$('.isTable').hide();
+		$('.codeManage').show();
+		$('.memberInfo').hide();
+	})
+	
+	$('#nvai-user-info').click(function(){
+		console.log('nvai-user-info');
+		$('.empTable').hide();
+		$('.isTable').hide();
+		$('.codeManage').hide();
+		$('.memberInfo').show();
 	})
 	
 });

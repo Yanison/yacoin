@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+
 @Repository
 public class CodeGroupDao {
 	@Inject
@@ -16,7 +17,5 @@ public class CodeGroupDao {
 	
 	private static String namespace = "com.yanison.infra.modules.codegroup.CodeGroupMapper";
 	
-	public List<CodeGroup> selectList(){ return sqlSession.selectList(namespace + ".selectList", ""); }
+	public List<CodeGroup> selectList(CodeGroup vo){ return sqlSession.selectList(namespace + ".selectList", vo); }
 }
-
-

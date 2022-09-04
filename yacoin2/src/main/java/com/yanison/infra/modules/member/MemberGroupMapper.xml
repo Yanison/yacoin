@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="com.yanison.infra.modules.member.MemberGroupMapper">
+									
+    <resultMap id="resultMapObj" type="com.yanison.infra.modules.member.MemberGroup"></resultMap>
+																		
+	<select id="selectList" resultMap="resultMapObj">
+		select cgseq,cgnameEng,cgname,count(ccgname)as xcnt from cg a left join ccg b on b.cg_cg = a.cgseq group by cgseq,cgnameEng,cgname;		
+	</select>
+
+</mapper>

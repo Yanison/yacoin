@@ -3,88 +3,156 @@ package com.yanison.infra.modules.codegroup;
 import java.util.Date;
 
 public class CodeGroup {
-	private String seq;
-	private String name;
-	private String pw;
-	private String nickname;
-	private String email;
-	private String tel;
-	private Date regDateAt;
-	private String regDateBy;
-	private Date modDateAt;
-	private String modDateBy;
-	private Integer userActive;
-	
-	public String getSeq() {
-		return seq;
-	}
-	public void setSeq(String seq) {
-		this.seq = seq;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getPw() {
-		return pw;
-	}
-	public void setPw(String pw) {
-		this.pw = pw;
-	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getTel() {
-		return tel;
-	}
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
-	public Date getRegDateAt() {
-		return regDateAt;
-	}
-	public void setRegDateAt(Date regDateAt) {
-		this.regDateAt = regDateAt;
-	}
-	public String getRegDateBy() {
-		return regDateBy;
-	}
-	public void setRegDateBy(String regDateBy) {
-		this.regDateBy = regDateBy;
-	}
-	public Date getModDateAt() {
-		return modDateAt;
-	}
-	public void setModDateAt(Date modDateAt) {
-		this.modDateAt = modDateAt;
-	}
-	public String getModDateBy() {
-		return modDateBy;
-	}
-	public void setModDateBy(String modDateBy) {
-		this.modDateBy = modDateBy;
-	}
-	public Integer getUserActive() {
-		return userActive;
-	}
-	public void setUserActive(Integer userActive) {
-		this.userActive = userActive;
-	}
+	private Integer cgseq;
+	private String cgname;
+	private String cgnameEng;
+	private Integer ccgseq;
+	private String ccgname;
+	private Integer cg_cg;
+	private Date ccgregDateAt;
+	private Date ccgregDateBt;
+	private Date ccgmodDateAt;
+	private Date ccgmodDateBt;
+	private Integer shOption;
+	private String shValue;
 	
 	
+	public Integer getShOption() {
+		return shOption;
+	}
+	public void setShOption(Integer shOption) {
+		this.shOption = shOption;
+	}
+	public String getShValue() {
+		return shValue;
+	}
+	public void setShValue(String shValue) {
+		this.shValue = shValue;
+	}
+	public Date getCcgregDateAt() {
+		return ccgregDateAt;
+	}
+	public void setCcgregDateAt(Date ccgregDateAt) {
+		this.ccgregDateAt = ccgregDateAt;
+	}
+	public Date getCcgregDateBt() {
+		return ccgregDateBt;
+	}
+	public void setCcgregDateBt(Date ccgregDateBt) {
+		this.ccgregDateBt = ccgregDateBt;
+	}
+	public Date getCcgmodDateAt() {
+		return ccgmodDateAt;
+	}
+	public void setCcgmodDateAt(Date ccgmodDateAt) {
+		this.ccgmodDateAt = ccgmodDateAt;
+	}
+	public Date getCcgmodDateBt() {
+		return ccgmodDateBt;
+	}
+	public void setCcgmodDateBt(Date ccgmodDateBt) {
+		this.ccgmodDateBt = ccgmodDateBt;
+	}
+	public Integer getXcnt() {
+		return xcnt;
+	}
+	public void setXcnt(Integer xcnt) {
+		this.xcnt = xcnt;
+	}
+	private Integer xcnt;
+	public String getCgnameEng() {
+		return cgnameEng;
+	}
+	public void setCgnameEng(String cgnameEng) {
+		this.cgnameEng = cgnameEng;
+	}
+	public Integer getxcnt() {
+		return xcnt;
+	}
+	public void setxcnt(Integer xcnt) {
+		this.xcnt = xcnt;
+	}
+	public Integer getCgseq() {
+		return cgseq;
+	}
+	public void setCgseq(Integer cgseq) {
+		this.cgseq = cgseq;
+	}
+	public String getCgname() {
+		return cgname;
+	}
+	public void setCgname(String cgname) {
+		this.cgname = cgname;
+	}
+	public Integer getCcgseq() {
+		return ccgseq;
+	}
+	public void setCcgseq(Integer ccgseq) {
+		this.ccgseq = ccgseq;
+	}
+	public String getCcgname() {
+		return ccgname;
+	}
+	public void setCcgname(String ccgname) {
+		this.ccgname = ccgname;
+	}
+	public Integer getCg_cg() {
+		return cg_cg;
+	}
+	public void setCg_cg(Integer cg_cg) {
+		this.cg_cg = cg_cg;
+	}
+	
+	
+	
+	
+////////////////////////empty table s////////////////////////////
+/////////////////////////////////////////////////////////////////
+	private Integer empcgseq;
+	private String empcgname;
+	private String empnameEng;
+	private Integer empccgseq;
+	private String empccgname;
+	private Integer cg_empcxg;
 
-	
-	
+
+	public Integer getEmpcgseq() {
+		return empcgseq;
+	}
+	public void setEmpcgseq(Integer empcgseq) {
+		this.empcgseq = empcgseq;
+	}
+	public String getEmpcgname() {
+		return empcgname;
+	}
+	public void setEmpcgname(String empcgname) {
+		this.empcgname = empcgname;
+	}
+	public String getEmpnameEng() {
+		return empnameEng;
+	}
+	public void setEmpnameEng(String empnameEng) {
+		this.empnameEng = empnameEng;
+	}
+	public Integer getEmpccgseq() {
+		return empccgseq;
+	}
+	public void setEmpccgseq(Integer empccgseq) {
+		this.empccgseq = empccgseq;
+	}
+	public String getEmpccgname() {
+		return empccgname;
+	}
+	public void setEmpccgname(String empccgname) {
+		this.empccgname = empccgname;
+	}
+	public Integer getCg_empcxg() {
+		return cg_empcxg;
+	}
+	public void setCg_empcxg(Integer cg_empcxg) {
+		this.cg_empcxg = cg_empcxg;
+	}
+////////////////////////empty table e/////////////////////////////
+/////////////////////////////////////////////////////////////////
 	
 }
