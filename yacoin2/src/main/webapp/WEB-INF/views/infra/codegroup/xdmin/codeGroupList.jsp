@@ -7,19 +7,114 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
-<form method="post" action="/codeGroup/codeGroupList">								
-	<select id="shOption" name="shOption" class="formcontents formTypeSelect delNY">
-		<option value="">N</option>
-		<option value="1"><c:if test="${empty vo.shOption} ">selected</c:if>검색구분</option>
-		<option value="2"><c:if test="${vo.shOption eq 1} ">selected</c:if>코드그룹 코드</option>
-		<option value="3"><c:if test="${vo.shOption eq 2} ">selected</c:if>코드그룹 이름(한글)</option>
-		<option value="3"><c:if test="${vo.shOption eq 3} ">selected</c:if>코드그룹 이름(영문)</option>
+<style>
+table{
+border-collapse:collapse;
+padding:5px;
+}
+
+th {
+text-align:left;
+border: 1px solid #999
+}
+
+td {
+text-align:left;
+border: 1px solid #eee
+}
+
+
+body{
+position:relative;
+}
+.wrapper{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+.formDiv{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.insertlink{
+text-decoration:none;
+width:35px;
+height:25px;
+text-align:center;
+line-height:26px;
+border:1px solid #333;
+background:#eee;
+border-radius:5px;
+margin-left:10px;
+}
+
+.tablewrapper{
+width:780px;
+height:206px;
+overflow:scroll;
+border: 1px solid #eee
+}
+</style>
+<div class="wrapper">
+<div class="formDiv">
+<form method="get" action="/codeGroup/codeGroupList">								
+	<select id="shValueSeq" name="shValueSeq" class="formcontents formTypeSelect delNY">
+		<option value="">cgname</option>
+		<c:forEach items="${cgname}" var="cgname" varStatus="status">
+			<option value="<c:out value="${cgname.cgseq}"/>"> <c:out value="${cgname.cgnameEng}"/></option>
+		</c:forEach>
 	</select>
-	<input type="text" id="shValue" name="shValue" value="<c:out value="${vo.shValue}"/>" placeholder="" class="formcontents formTypeSelect modDate">
-	<input type="submit">
-</form>	
+	<input type="text" id="shValueName" name="shValueName" placeholder="" class="formcontents formTypeSelect modDate">
+	<input type="submit" value="찾기">
+</form>
 <div>
-	<c:forEach items="${list}" var="list" varStatus="status">
-		<c:out value="${list.ccgseq}"/> / <c:out value="${list.ccgname}"/>
-	</c:forEach>
+	<a class="insertlink" href="/codeGroup/codeGroupMod">수정</a>
+	<a class="insertlink" href="/codeGroup/codeGroupForm">신규</a>
 </div>
+
+</div>
+
+<div class="tablewrapper">
+	<table>
+		<colgroup>
+			<col width="200">
+			<col width="200">
+			<col width="200">
+			<col width="200">
+			<thead>
+				<tr>
+					<th>cgseq</th>
+					<th>cgnameEng</th>
+					<th>cgname</th>
+					<th>ccgname</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:choose>
+					<c:when test="${fn:length(list) eq 0}">
+						<tr>
+							<td colspan="4" style="text-align:center;"> 데이타가 없어요</td>
+						</tr>
+					</c:when>
+					<c:otherwise>
+						<c:forEach items="${list}" var="list" varStatus="status">
+							<tr>
+								<td><c:out value="${list.cgseq}"/></td>
+								<td><c:out value="${list.cgname}"/></td>
+								<td><c:out value="${list.cgnameEng}"/></td>
+								<td><c:out value="${list.ccgname}"/> </td>
+							</tr>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>			
+			</tbody>
+		</colgroup>
+	</table>
+	
+</div>
+</div>
+
+

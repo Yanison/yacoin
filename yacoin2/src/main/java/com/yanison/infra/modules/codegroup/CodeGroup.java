@@ -106,53 +106,28 @@ public class CodeGroup {
 	
 	
 	
-////////////////////////empty table s////////////////////////////
+////////////////////////vo table s////////////////////////////
 /////////////////////////////////////////////////////////////////
-	private Integer empcgseq;
-	private String empcgname;
-	private String empnameEng;
-	private Integer empccgseq;
-	private String empccgname;
-	private Integer cg_empcxg;
+
+	private String shValueName;
+	private String shValueSeq;
 
 
-	public Integer getEmpcgseq() {
-		return empcgseq;
+	public String getShValueName() {
+		return shValueName;
 	}
-	public void setEmpcgseq(Integer empcgseq) {
-		this.empcgseq = empcgseq;
+	public void setShValueName(String shValueName) {
+		this.shValueName = shValueName;
 	}
-	public String getEmpcgname() {
-		return empcgname;
+	public String getShValueSeq() {
+		return shValueSeq;
 	}
-	public void setEmpcgname(String empcgname) {
-		this.empcgname = empcgname;
+	public void setShValueSeq(String shValueSeq) {
+		this.shValueSeq = shValueSeq;
 	}
-	public String getEmpnameEng() {
-		return empnameEng;
-	}
-	public void setEmpnameEng(String empnameEng) {
-		this.empnameEng = empnameEng;
-	}
-	public Integer getEmpccgseq() {
-		return empccgseq;
-	}
-	public void setEmpccgseq(Integer empccgseq) {
-		this.empccgseq = empccgseq;
-	}
-	public String getEmpccgname() {
-		return empccgname;
-	}
-	public void setEmpccgname(String empccgname) {
-		this.empccgname = empccgname;
-	}
-	public Integer getCg_empcxg() {
-		return cg_empcxg;
-	}
-	public void setCg_empcxg(Integer cg_empcxg) {
-		this.cg_empcxg = cg_empcxg;
-	}
-////////////////////////empty table e/////////////////////////////
+	
+	
+////////////////////////vo table e/////////////////////////////
 /////////////////////////////////////////////////////////////////
 	
 }

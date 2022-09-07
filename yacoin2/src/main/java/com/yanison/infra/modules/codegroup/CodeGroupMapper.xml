@@ -10,10 +10,57 @@
 									
     <resultMap id="resultMapObj" type="com.yanison.infra.modules.codegroup.CodeGroup"></resultMap>
 																		
-
-	<select id="selectList" resultMap="resultMapObj">
-		select a.* from ccg a where 1=1 and ccgname like concat('%',#{shValue},'%')
+	
+	<select id="selectcgCgname" resultMap="resultMapObj">
+		select cgseq,cgnameEng from cg
 	</select>
+	
+	<select id="selectList" resultMap="resultMapObj">		
+		<!-- select a.* 
+		from ccg a 
+		where 1=1 and 
+		ccgname like concat('%',#{shValueName},'%') -->
+		<!-- <if test="shDelNy != null and !shDelNy.equals('')">AND ifcgDelNy = #{shDelNy}</if> -->
+		select cgseq,cgname,cgnameEng,ccgname 
+		from cg a left join ccg b 
+		on a.cgseq = b.cg_cg 
+		where 1=1 and
+		a.cgseq = #{shValueSeq} and
+		b.ccgname like concat('%',#{shValueName},'%')
+<!-- 		<choose>
+			<when test="shOption == 1">AND seq = #{shValue}</when>
+			<when test="shOption == 2">AND ifcgName LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 3">AND ifcgNameEng LIKE CONCAT('%',#{shValue},'%')</when>
+			<otherwise>
+			</otherwise>
+		</choose> -->
+	</select>
+	
+	<insert id="insert">
+		insert ccg(
+			ccgname,
+			cg_cg
+		)
+		value(
+			#{ccgname}
+			,#{cg_cg}
+		)
+	</insert>
+	
+	<insert id="insertCg">
+		insert cg(
+		cgnameEng
+		)
+		value(
+		#{cgnameEng}
+		)
+	</insert>
+	
+	<update id="updateCgname">
+		update cg set cgnameEng={#udptValfrom} 
+		where cgnameEng={#udptValTo} 
+		and cgseq = #{shvalueSeq}
+	</update>
 
 </mapper>
 
