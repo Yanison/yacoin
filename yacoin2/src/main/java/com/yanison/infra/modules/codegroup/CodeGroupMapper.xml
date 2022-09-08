@@ -9,7 +9,10 @@
 <mapper namespace="com.yanison.infra.modules.codegroup.CodeGroupMapper">
 									
     <resultMap id="resultMapObj" type="com.yanison.infra.modules.codegroup.CodeGroup"></resultMap>
-																		
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		select ccgseq,ccgname from ccg where ccgseq = #{ccgseq}
+	</select>																	
 	
 	<select id="selectcgCgname" resultMap="resultMapObj">
 		select cgseq,cgnameEng from cg
@@ -21,7 +24,7 @@
 		where 1=1 and 
 		ccgname like concat('%',#{shValueName},'%') -->
 		<!-- <if test="shDelNy != null and !shDelNy.equals('')">AND ifcgDelNy = #{shDelNy}</if> -->
-		select cgseq,cgname,cgnameEng,ccgname 
+		select cgseq,ccgseq,cgname,cgnameEng,ccgname 
 		from cg a left join ccg b 
 		on a.cgseq = b.cg_cg 
 		where 1=1 and
@@ -61,6 +64,10 @@
 		where cgnameEng={#udptValTo} 
 		and cgseq = #{shvalueSeq}
 	</update>
+	
+	<delete id="deleteByccgname">
+		delete from ccg where ccgseq=#{ccgseq}
+	</delete>
 
 </mapper>
 

@@ -24,6 +24,12 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	}
 	
 	@Override
+	public CodeGroup selectOne(CodeGroup vo) throws Exception{
+		CodeGroup item = dao.selectOne(vo);
+		return item;
+	}
+	
+	@Override
 	public int insert(CodeGroup dto) throws Exception{
 		int ccg =dao.insert(dto);
 		return ccg;
@@ -39,5 +45,11 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	public int updateCgname(CodeGroup dto) throws Exception{
 		int updateCgname = dao.updateCgname(dto);
 		return updateCgname;
+	}
+	
+	@Override
+	public int deleteByccgname(CodeGroup dto) throws Exception{
+		int deleteByccgname = dao.deleteByccgname(dto);
+		return deleteByccgname;
 	}
 }

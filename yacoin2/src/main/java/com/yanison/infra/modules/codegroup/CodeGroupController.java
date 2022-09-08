@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping(value="/codeGroup/")
@@ -21,16 +22,35 @@ public class CodeGroupController {
 		model.addAttribute("list", list);
 		List<CodeGroup> cgname = service.selectcgCgname(vo);
 		model.addAttribute("cgname", cgname);
-		
+		int deleteByccgname = service.deleteByccgname(dto);
+		System.out.println("deleted OBJ : " + deleteByccgname);
 		
 		return "infra/codegroup/xdmin/codeGroupList";
 	}
+	
+	@RequestMapping(value="codeGroupListDlt")
+	public String codeGroupListDlt
+			(CodeGroup dto, @RequestParam("checkedLegnth") 
+							int checkedLegnth
+			) throws Exception
+		{
+		for(int i = 0; i < checkedLegnth; i++) {
+			int deleteByccgname = service.deleteByccgname(dto);
+			System.out.println("deleted OBJ : " + deleteByccgname);
+		}
+		return "redirect:codeGroupList";
+	}
+	
+	
 	
 	@RequestMapping(value="codeGroupForm")
 	public String codeGroupForm(Model model,CodeGroup vo) throws Exception{
 		
 		List<CodeGroup> cgname = service.selectcgCgname(vo);
 		model.addAttribute("cgname", cgname);
+		
+		CodeGroup item = service.selectOne(vo);
+		model.addAttribute("item", item);
 		
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}

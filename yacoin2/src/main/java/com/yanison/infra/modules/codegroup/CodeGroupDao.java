@@ -26,6 +26,12 @@ public class CodeGroupDao {
 		return sqlSession.selectList(namespaceCgname + ".selectcgCgname", vo); 
 	}
 	
+	private static String namespaceOne = "com.yanison.infra.modules.codegroup.CodeGroupMapper";
+	public CodeGroup selectOne(CodeGroup vo) {
+		return sqlSession.selectOne(namespaceOne +".selectOne", vo);
+	}
+
+	
 	//	=====insert======
 	//	=================
 	public int insert(CodeGroup dto) {
@@ -45,5 +51,12 @@ public class CodeGroupDao {
 		System.out.println("dao result:" + updateCgname );
 		return updateCgname;
 	}
+	
+	public int deleteByccgname(CodeGroup dto) {
+		int deleteByccgname =sqlSession.delete(namespace + ".deleteByccgname", dto);
+		return deleteByccgname;
+	}
+	
+
 	
 }
