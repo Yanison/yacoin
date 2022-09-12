@@ -4,71 +4,21 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-
-
+<!-- =================%%fix below%%================== -->
 <mapper namespace="com.yanison.infra.modules.codegroup.CodeGroupMapper">
-									
+<!-- ================================%%fix below%%================== -->							
     <resultMap id="resultMapObj" type="com.yanison.infra.modules.codegroup.CodeGroup"></resultMap>
-	
-	<select id="selectOne" resultMap="resultMapObj">
-		select ccgseq,ccgname from ccg where ccgseq = #{ccgseq}
-	</select>																	
-	
-	<select id="selectcgCgname" resultMap="resultMapObj">
-		select cgseq,cgnameEng from cg
+																		
+	<select id="selectDeptList" resultMap="resultMapObj">
+		select * from dept
 	</select>
 	
-	<select id="selectList" resultMap="resultMapObj">		
-		<!-- select a.* 
-		from ccg a 
-		where 1=1 and 
-		ccgname like concat('%',#{shValueName},'%') -->
-		<!-- <if test="shDelNy != null and !shDelNy.equals('')">AND ifcgDelNy = #{shDelNy}</if> -->
-		select cgseq,ccgseq,cgname,cgnameEng,ccgname 
-		from cg a left join ccg b 
-		on a.cgseq = b.cg_cg 
-		where 1=1 and
-		a.cgseq = #{shValueSeq} and
-		b.ccgname like concat('%',#{shValueName},'%')
-<!-- 		<choose>
-			<when test="shOption == 1">AND seq = #{shValue}</when>
-			<when test="shOption == 2">AND ifcgName LIKE CONCAT('%',#{shValue},'%')</when>
-			<when test="shOption == 3">AND ifcgNameEng LIKE CONCAT('%',#{shValue},'%')</when>
-			<otherwise>
-			</otherwise>
-		</choose> -->
+	<select id="selectDeptOne" resultMap="resultMapObj">
+		select * from dept where deptid = 4
 	</select>
 	
-	<insert id="insert">
-		insert ccg(
-			ccgname,
-			cg_cg
-		)
-		value(
-			#{ccgname}
-			,#{cg_cg}
-		)
-	</insert>
-	
-	<insert id="insertCg">
-		insert cg(
-		cgnameEng
-		)
-		value(
-		#{cgnameEng}
-		)
-	</insert>
-	
-	<update id="updateCgname">
-		update cg set cgnameEng={#udptValfrom} 
-		where cgnameEng={#udptValTo} 
-		and cgseq = #{shvalueSeq}
+	<update id="selectUdpt">
+		update dept set dname=#{danmeUdpt} where deptid = #{deptid};
 	</update>
-	
-	<delete id="deleteByccgname">
-		delete from ccg where ccgseq=#{ccgseq}
-	</delete>
 
 </mapper>
-
-

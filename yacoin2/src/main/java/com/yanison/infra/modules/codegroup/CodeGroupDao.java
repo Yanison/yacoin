@@ -10,53 +10,18 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class CodeGroupDao {
+
 	@Inject
-	@Resource(name = "sqlSession")
+	@Resource (name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	//	=====select======
-	//	=================
-	private static String namespace = "com.yanison.infra.modules.codegroup.CodeGroupMapper";
-	public List<CodeGroup> selectList(CodeGroup vo){ 
-		return sqlSession.selectList(namespace + ".selectList", vo); 
+	public static String namespace = "com.yanison.infra.modules.codegroup.CodeGroupMapper";
+	public List<CodeGroup> selectDeptList(){
+		return sqlSession.selectList(namespace + ".selectList", "");
 	}
 	
-	private static String namespaceCgname = "com.yanison.infra.modules.codegroup.CodeGroupMapper";
-	public List<CodeGroup> selectcgCgname(CodeGroup vo){ 
-		return sqlSession.selectList(namespaceCgname + ".selectcgCgname", vo); 
+	public CodeGroup selectDeptOne(){
+		return sqlSession.selectOne(namespace+".selectDeptOne", "");
 	}
-	
-	private static String namespaceOne = "com.yanison.infra.modules.codegroup.CodeGroupMapper";
-	public CodeGroup selectOne(CodeGroup vo) {
-		return sqlSession.selectOne(namespaceOne +".selectOne", vo);
-	}
-
-	
-	//	=====insert======
-	//	=================
-	public int insert(CodeGroup dto) {
-		int result = sqlSession.insert(namespace + ".insert", dto);
-		System.out.println("dao result:" + result );
-		return result;
-	}
-	
-	public int insertCg(CodeGroup dto) {
-		int resultCg = sqlSession.insert(namespace + ".insertCg", dto);
-		System.out.println("dao result: " + resultCg );
-		return resultCg;
-	}
-	
-	public int updateCgname(CodeGroup dto) {
-		int updateCgname = sqlSession.update(namespace + ".updateCgname", dto);
-		System.out.println("dao result:" + updateCgname );
-		return updateCgname;
-	}
-	
-	public int deleteByccgname(CodeGroup dto) {
-		int deleteByccgname =sqlSession.delete(namespace + ".deleteByccgname", dto);
-		return deleteByccgname;
-	}
-	
-
 	
 }

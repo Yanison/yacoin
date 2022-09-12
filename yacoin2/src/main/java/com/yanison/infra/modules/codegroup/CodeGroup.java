@@ -3,131 +3,77 @@ package com.yanison.infra.modules.codegroup;
 import java.util.Date;
 
 public class CodeGroup {
-	private Integer cgseq;
-	private String cgname;
-	private String cgnameEng;
-	private Integer ccgseq;
-	private String ccgname;
-	private Integer cg_cg;
-	private Date ccgregDateAt;
-	private Date ccgregDateBt;
-	private Date ccgmodDateAt;
-	private Date ccgmodDateBt;
-	private Integer shOption;
-	private String shValue;
+//Dept
+	private Integer deptid;
+	private Integer pid;
+	private String dname; 
+	private Date workdate;
+	private Integer captain;
 	
-	
-	public Integer getShOption() {
-		return shOption;
+	public Integer getDeptid() {
+		return deptid;
 	}
-	public void setShOption(Integer shOption) {
-		this.shOption = shOption;
+	public void setDeptid(Integer deptid) {
+		this.deptid = deptid;
 	}
-	public String getShValue() {
-		return shValue;
+	public Integer getPid() {
+		return pid;
 	}
-	public void setShValue(String shValue) {
-		this.shValue = shValue;
+	public void setPid(Integer pid) {
+		this.pid = pid;
 	}
-	public Date getCcgregDateAt() {
-		return ccgregDateAt;
+	public String getDname() {
+		return dname;
 	}
-	public void setCcgregDateAt(Date ccgregDateAt) {
-		this.ccgregDateAt = ccgregDateAt;
+	public void setDname(String dname) {
+		this.dname = dname;
 	}
-	public Date getCcgregDateBt() {
-		return ccgregDateBt;
+	public Date getWorkdate() {
+		return workdate;
 	}
-	public void setCcgregDateBt(Date ccgregDateBt) {
-		this.ccgregDateBt = ccgregDateBt;
+	public void setWorkdate(Date workdate) {
+		this.workdate = workdate;
 	}
-	public Date getCcgmodDateAt() {
-		return ccgmodDateAt;
+	public Integer getCaptain() {
+		return captain;
 	}
-	public void setCcgmodDateAt(Date ccgmodDateAt) {
-		this.ccgmodDateAt = ccgmodDateAt;
-	}
-	public Date getCcgmodDateBt() {
-		return ccgmodDateBt;
-	}
-	public void setCcgmodDateBt(Date ccgmodDateBt) {
-		this.ccgmodDateBt = ccgmodDateBt;
-	}
-	public Integer getXcnt() {
-		return xcnt;
-	}
-	public void setXcnt(Integer xcnt) {
-		this.xcnt = xcnt;
-	}
-	private Integer xcnt;
-	public String getCgnameEng() {
-		return cgnameEng;
-	}
-	public void setCgnameEng(String cgnameEng) {
-		this.cgnameEng = cgnameEng;
-	}
-	public Integer getxcnt() {
-		return xcnt;
-	}
-	public void setxcnt(Integer xcnt) {
-		this.xcnt = xcnt;
-	}
-	public Integer getCgseq() {
-		return cgseq;
-	}
-	public void setCgseq(Integer cgseq) {
-		this.cgseq = cgseq;
-	}
-	public String getCgname() {
-		return cgname;
-	}
-	public void setCgname(String cgname) {
-		this.cgname = cgname;
-	}
-	public Integer getCcgseq() {
-		return ccgseq;
-	}
-	public void setCcgseq(Integer ccgseq) {
-		this.ccgseq = ccgseq;
-	}
-	public String getCcgname() {
-		return ccgname;
-	}
-	public void setCcgname(String ccgname) {
-		this.ccgname = ccgname;
-	}
-	public Integer getCg_cg() {
-		return cg_cg;
-	}
-	public void setCg_cg(Integer cg_cg) {
-		this.cg_cg = cg_cg;
+	public void setCaptain(Integer captain) {
+		this.captain = captain;
 	}
 	
 	
-	
-	
-////////////////////////vo table s////////////////////////////
-/////////////////////////////////////////////////////////////////
 
-	private String shValueName;
-	private String shValueSeq;
-
-
-	public String getShValueName() {
-		return shValueName;
-	}
-	public void setShValueName(String shValueName) {
-		this.shValueName = shValueName;
-	}
-	public String getShValueSeq() {
-		return shValueSeq;
-	}
-	public void setShValueSeq(String shValueSeq) {
-		this.shValueSeq = shValueSeq;
-	}
 	
 	
-////////////////////////vo table e/////////////////////////////
-/////////////////////////////////////////////////////////////////
 	
+//Emp
+	private Integer empid;
+	private Integer dept;
+	private String ename;
+	private Integer salary;
+	
+	public Integer getEmpid() {
+		return empid;
+	}
+	public void setEmpid(Integer empid) {
+		this.empid = empid;
+	}
+	public Integer getDept() {
+		return dept;
+	}
+	public void setDept(Integer dept) {
+		this.dept = dept;
+	}
+	public String getEname() {
+		return ename;
+	}
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+	public Integer getSalary() {
+		return salary;
+	}
+	public void setSalary(Integer salary) {
+		this.salary = salary;
+	}
 }
