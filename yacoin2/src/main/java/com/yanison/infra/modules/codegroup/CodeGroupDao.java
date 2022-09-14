@@ -17,11 +17,21 @@ public class CodeGroupDao {
 	
 	public static String namespace = "com.yanison.infra.modules.codegroup.CodeGroupMapper";
 	public List<CodeGroup> selectDeptList(){
-		return sqlSession.selectList(namespace + ".selectList", "");
+		return sqlSession.selectList(namespace + ".selectDeptList", "");
+	}
+	public List<CodeGroup> selectAllEmp(CodeGroup dto){
+		return sqlSession.selectList(namespace + ".selectAllEmp", dto);
+	}
+	public CodeGroup selectDeptOne(CodeGroup dto){
+		return sqlSession.selectOne(namespace+".selectDeptOne", dto);
 	}
 	
-	public CodeGroup selectDeptOne(){
-		return sqlSession.selectOne(namespace+".selectDeptOne", "");
+	public int insertDept(CodeGroup dto) {
+		return sqlSession.insert(namespace + ".insertDept", dto);
+	}
+	
+	public int selectUdpt(CodeGroup dto) {
+		return sqlSession.update(namespace + ".selectUdpt", dto);
 	}
 	
 }

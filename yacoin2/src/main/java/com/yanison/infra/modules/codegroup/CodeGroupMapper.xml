@@ -10,15 +10,52 @@
     <resultMap id="resultMapObj" type="com.yanison.infra.modules.codegroup.CodeGroup"></resultMap>
 																		
 	<select id="selectDeptList" resultMap="resultMapObj">
-		select * from dept
+		select 
+			deptid,pid,dname,count(dept) eodcnt,captain,
+			(select ename from emp where d.captain = empid) ename 
+		from emp e left join dept d 
+			on d.deptid = e.dept where d.activeNy = 1
+			group by dept;
+	</select>
+	
+	<select id="selectAllEmp" resultMap="resultMapObj">
+		select * from emp where dept = #{deptid} and where activeNy = 1
 	</select>
 	
 	<select id="selectDeptOne" resultMap="resultMapObj">
-		select * from dept where deptid = 4
+		select *,(select ename from emp where empid = d.captain) ename from dept d where deptid = #{deptid}
 	</select>
 	
+	<select id="selectCaptain" resultMap="resultMapObj">
+		
+	</select>
+	
+	<insert id="insertDept">
+		insert into dept (
+			dname,
+			pid,
+			captain
+		)
+		values(
+			#{dname},
+			#{pid},
+			#{captain}
+		)
+	</insert>
+	
 	<update id="selectUdpt">
-		update dept set dname=#{danmeUdpt} where deptid = #{deptid};
+		update dept set 
+		dname = #{dnameUdpt},
+		pid = #{pidUdpt},
+		captain = #{captainUdpt}
+		where deptid = #{deptid};
+		
+		<!-- update dept set 
+		dname="영업부부젤라라",
+		pid=0,
+		captain=2
+		where deptid = 1; -->
 	</update>
 
 </mapper>
+

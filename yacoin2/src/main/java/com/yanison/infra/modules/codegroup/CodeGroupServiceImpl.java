@@ -16,7 +16,21 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	}
 	
 	@Override
-	public CodeGroup selectDeptOne() throws Exception{
-		return dao.selectDeptOne();
+	public CodeGroup selectDeptOne(CodeGroup dto) throws Exception{
+		return dao.selectDeptOne(dto);
+	}
+	@Override
+	public List<CodeGroup> selectAllEmp(CodeGroup dto) throws Exception{
+		return dao.selectAllEmp(dto);
+	}
+	
+	@Override
+	public int selectUdpt (CodeGroup dto) throws Exception{
+		return dao.selectUdpt(dto);
+	}
+	
+	@Override
+	public int insertDept (CodeGroup dto) throws Exception{
+		return dao.insertDept(dto);
 	}
 }
