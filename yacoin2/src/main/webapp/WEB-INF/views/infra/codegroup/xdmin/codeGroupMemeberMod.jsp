@@ -49,20 +49,20 @@
 			<form method="get" action="codeUpdtMod">
 			<tbody>
 				<tr>
-					<td>사원번호 : ${listDeptOne.deptid}</td>
-					<td><input tpye="text" name="deptid" id="deptid" placeholder="${listDeptOne.deptid}"/ value="${listDeptOne.deptid}" readonly></td>
+					<td>사원번호 : ${vo.empid}</td>
+					<td><input tpye="text" name="empid" id="empid" placeholder="${vo.empid}" value="${vo.empid}" readonly></td>
 				</tr>
 				<tr>
-					<td>사원이름 : ${listDeptOne.dname}</td>
-					<td><input tpye="text" name="dnameUdpt" id="dnameUdpt" placeholder="1"/></td>
+					<td>사원이름 : ${selectEmpOne.ename}</td>
+					<td><input tpye="text" name=ename id="ename" placeholder="${selectEmpOne.ename}" value="${vo.ename}"/></td>
 				</tr>
 				<tr>
-					<td>연봉 ${listDeptOne.pid}</td>
-					<td><input tpye="text" name="pidUdpt" id="pidUdpt" placeholder="1"/></td>
+					<td>연봉 :${selectEmpOne.salary}</td>
+					<td><input tpye="text" name="salary" id="salary" placeholder="${selectEmpOne.salary}"/></td>
 				</tr>
 				<tr>
-					<td>부서 ${listDeptOne.captain}</td>
-					<td><input tpye="text" name="captainUdpt" id="captainUdpt" placeholder="1"/></td>
+					<td>부서 ${selectEmpOne.dept}</td>
+					<td><input tpye="text" name="dept" id="dept" placeholder="${selectEmpOne.dept}"/></td>
 				</tr>
 			</tbody>
 			<tfoot>

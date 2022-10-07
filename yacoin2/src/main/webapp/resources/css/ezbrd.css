@@ -1,0 +1,55 @@
+.formwrapper{
+ background:#eee;
+ display:flex;
+ width:100%;
+ height:180px;
+}
+
+.formwrapper input[type="text"]{
+	height:25px;
+	width:150px;
+	border-radius:5px;
+	border:none;
+}
+
+.formwrapper input[type="submit"]{
+	height:25px;
+	width:50px;
+	border-radius:5px;
+	border:none;
+}
+
+.main{
+	width:100%;
+	height:500px;
+	position: relative;
+}
+
+.table{
+	width:100%;
+	display:flex;
+	justify-content:space-around;
+	padding:10px;
+}
+table{
+	border:1px solid #333;
+}
+
+.tbl{
+	float:left;
+}
+.tbr{
+	float:right;
+}
+
+.iud{
+	padding:10px;
+	width:100%;
+	height:400px;
+	background:#eee;
+	display:flex;
+}
+
+.iud > div {
+	width:50%;
+}

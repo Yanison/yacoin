@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- =================%%fix below%%================== -->
+<mapper namespace="com.yanison.infra.modules.membergroup.MemberGroupMapper">
+<!-- ================================%%fix below%%================== -->							
+    <resultMap id="resultMapObj" type="com.yanison.infra.modules.membergroup.MemberGroup"></resultMap>
+    
+    <select id="selectMemberList" resultMap="resultMapObj">
+    	select * from emp e left join dept d on e.dept = d.deptid where ename like concat('%',#{shValueName},'%')
+    </select>
+
+</mapper>

@@ -90,7 +90,7 @@
 				</tr>
 				<tr>
 					<td>부서명 : ${listDeptOne.dname}</td>
-					<td><input tpye="text" name="dnameUdpt" id="dnameUdpt" value="${listDeptOne.dname}"/></td>
+					<td><input tpye="text" name="dnameUdpt" id="dnameUdpt" placeholder="${listDeptOne.deptid}" value="${listDeptOne.dname}"/></td>
 				</tr>
 				<tr>
 					<td>부서등급 : ${listDeptOne.pid}</td>
@@ -166,7 +166,7 @@
 									</td>
 									<td>
 										<form action="codeGroupMemeberMod">
-											<input type="text" name="empid" value="${listEmp.empid}" style="display:none;">
+											<input type="hidden" name="empid" value="${listEmp.empid}">
 											<input type="submit" value="사원정보">
 										</form>
 									</td>

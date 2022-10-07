@@ -14,14 +14,18 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	public List<CodeGroup> selectDeptList() throws Exception{
 		return dao.selectDeptList();
 	}
+	@Override
+	public CodeGroup selectEmpOne(CodeGroup vo) throws Exception{
+		return dao.selectEmpOne(vo);
+	}
 	
 	@Override
 	public CodeGroup selectDeptOne(CodeGroup dto) throws Exception{
 		return dao.selectDeptOne(dto);
 	}
 	@Override
-	public List<CodeGroup> selectAllEmp(CodeGroup dto) throws Exception{
-		return dao.selectAllEmp(dto);
+	public List<CodeGroup> selectAllEmp(CodeGroup vo) throws Exception{
+		return dao.selectAllEmp(vo);
 	}
 	
 	@Override

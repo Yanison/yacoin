@@ -25,16 +25,17 @@ public class CodeGroupController {
 	}
 	
 	@RequestMapping(value="codeGroupMod")
-	public String codeGroupOne (Model model, CodeGroup dto,CodeGroup vo) throws Exception {
+	public String codeGroupOne (@ModelAttribute ("vo") CodeGroup vo,Model model, CodeGroup dto) throws Exception {
 		
 		CodeGroup listDeptOne = service.selectDeptOne(dto);
 		model.addAttribute("listDeptOne", listDeptOne);
 		System.out.println("listDeptOne : " + listDeptOne);
-		
-		List<CodeGroup> listEmp = service.selectAllEmp(dto);
-		model.addAttribute("listEmp", listEmp);
 		List<CodeGroup> list = service.selectDeptList();
 		model.addAttribute("list", list);
+		
+		List<CodeGroup> listEmp = service.selectAllEmp(vo);
+		model.addAttribute("listEmp", listEmp);
+		
 		
 		return "infra/codegroup/xdmin/codeGroupMod";
 	}
@@ -53,7 +54,11 @@ public class CodeGroupController {
 	
 	
 	@RequestMapping(value="codeGroupMemeberMod")
-	public String codeGroupMemeberMod (Model model, CodeGroup dto,CodeGroup vo) throws Exception {
+	public String codeGroupMemeberMod (Model model,@ModelAttribute ("vo") CodeGroup vo) throws Exception {
+		
+		CodeGroup selectEmpOne = service.selectEmpOne(vo);
+		model.addAttribute("selectEmpOne", selectEmpOne);
+		
 		
 		return "infra/codegroup/xdmin/codeGroupMemeberMod";
 	}
@@ -63,7 +68,7 @@ public class CodeGroupController {
 		
 		int insertDept = service.insertDept(dto);
 		System.out.println("@@@@"+"insertDept" + insertDept);
-		
+			
 		return "infra/codegroup/xdmin/codeGroupList";
 	}
 	

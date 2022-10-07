@@ -12,11 +12,11 @@
 	<title>CodeGroupList</title>
 	
 <link type="text/css" rel="stylesheet" href="../resources/css/cgl.css">
-
+<script src="../resources/js/test.js"></script>
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<script src="../resources/js/test.js"></script>
+
 <!-- BootStrap -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -32,19 +32,24 @@
 
 <div class="tablewrapper">
 	<div class="functions">
-		<div class="select">
-			<select>
-				<option>부서명</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-			</select>
+		<div class="searchDiv">
+			<form method="get" action="">
+				<select>
+					<option>부서리스트</option>
+					<option name="shValueOpt" value="1">부서번호로찾기</option>
+					<option name="shValueOpt" value="2">부서이름으로찾기</option>
+				</select>
+				<input type="text" name="shValueStr" placeholder=""/>			
+				<input type="submit" value="찾기"/>
+			</form>
+
 		</div>
 		
 		<div class="crud">
 			<a href="http://localhost:8080/codeGroup/codeGroupModFormTest">ModFormTest</a>
 			<a href="http://localhost:8080/codeGroup/codeGroupMod">부서수정</a>
 			<a href="http://localhost:8080/codeGroup/codeGroupCreat">부서생성</a>
+			<a href="http://localhost:8080/ezenGroup/ezenBoard">사원리스트</a>
 			<input type="submit" value="부서삭제">
 			<input type="submit" value="부서이름수정">
 		</div>

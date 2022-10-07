@@ -44,7 +44,7 @@
 			<tr>
 				<th>부서이름</th>
 				<td>
-					<input type="text" name="dname" placeholder="dname"/>
+					<input type="text" name="dname" placeholder="dname" value=""/>
 				</td>
 			</tr>
 			<tr>

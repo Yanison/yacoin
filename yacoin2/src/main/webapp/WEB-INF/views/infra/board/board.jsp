@@ -22,28 +22,7 @@ text-align:left;
 <h1>
 	사원리스트
 </h1>
-
-shOption
-shValueNY
-shValueSeq
-shValueName
-
 <form method="GET" action="/memberGroup/memberGroupList">
-<%-- 	<select id="shOption" name="shOption" class="formcontents formTypeSelect delNY">
-		<option><c:if test="${empty vo.shOption} ">selected</c:if>shOption</option>
-		<option value="1" <c:if test="${vo.shOption eq 1} ">selected</c:if> >seq</option>
-		<option value="2" <c:if test="${vo.shOption eq 1} ">selected</c:if> >dob</option>
-		<option value="3" <c:if test="${vo.shOption eq 2} ">selected</c:if> >name</option>
-		<option value="4" <c:if test="${vo.shOption eq 3} ">selected</c:if> >ActiveNY</option>
-	</select> --%>
-<%-- 	<p>Date: <input name="shValueDob" type="text" id="datepicker" placeholder="shValueDob"></p>
-	
-	<select id="shValueNY" name="activeNy" class="formcontents formTypeSelect delNY">
-		<option>activeNy</option>
-		<option value="0" <c:if test="${vo.activeNy eq 0} ">selected</c:if>>N</option>
-		<option value="1" <c:if test="${vo.activeNy eq 1} ">selected</c:if>>Y</option>
-	</select>							
-	<input type="text" id="shValueSeq" name="shValueSeq" placeholder="shValueSeq" class="formcontents formTypeSelect modDate"> --%>
 	<input type="text" id="shValueName" name="shValueName" placeholder="입력" value="<c:out value="${vo.shValueName}"></c:out>" class="formcontents formTypeSelect modDate">
 	<input type="submit">
 </form>	
@@ -84,6 +63,34 @@ shValueName
 	</table>
 	
 </div>
+
+<!-- Paging[s] -->
+
+<div class="col-sm-12 col-md-7" style="text-align:right">
+<div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+  <ul class="pagination">
+  
+  <c:if test="${searchVO.prev}">
+  <li class="paginate_button page-item previous" id="dataTable_previous">
+ 		 <a href="javascript:void(0);" onclick="fn_go_page(${searchVO.startDate - 1}); return false;" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+  </li>
+  </c:if>
+  
+  <c:forEach var="num" begin="${searchVO.startDate}" end="${searchVO.endDate}">
+  <li class="paginate_button page-item">
+ 		 <a href="javascript:void(0);" onclick="fn_go_page(${num}); return false;" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">${num}</a>
+  </li>
+  </c:forEach>
+  
+  <c:if test="${searchVO.next}">
+  <li class="paginate_button page-item next" id="dataTable_next">
+ 		 <a href="javascript:void(0);" onclick="fn_go_page(${searchVO.endDate + 1}); return false;" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Next</a>
+  </li>
+  </c:if>
+  </ul>
+</div>
+</div>
+<!-- Paging[e] -->
 
 
 </body>

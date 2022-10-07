@@ -19,9 +19,14 @@ public class CodeGroupDao {
 	public List<CodeGroup> selectDeptList(){
 		return sqlSession.selectList(namespace + ".selectDeptList", "");
 	}
-	public List<CodeGroup> selectAllEmp(CodeGroup dto){
-		return sqlSession.selectList(namespace + ".selectAllEmp", dto);
+	public List<CodeGroup> selectAllEmp(CodeGroup vo){
+		return sqlSession.selectList(namespace + ".selectAllEmp", vo);
 	}
+	
+	public CodeGroup selectEmpOne(CodeGroup vo){
+		return sqlSession.selectOne(namespace+".selectEmpOne", vo);
+	}
+	
 	public CodeGroup selectDeptOne(CodeGroup dto){
 		return sqlSession.selectOne(namespace+".selectDeptOne", dto);
 	}
